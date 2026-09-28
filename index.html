@@ -152,18 +152,19 @@
             // We temporarily reset body to block and remove padding/margins to ensure perfect alignment.
             const originalBodyStyle = document.body.style.cssText;
             document.body.style.display = 'block';
-            document.body.style.margin = '0';
-            document.body.style.padding = '0';
             element.style.margin = '0';
-            element.style.width = '900px'; // Use desktop width so text doesn't wrap and expand vertically
+            element.style.width = '900px'; 
             element.style.maxWidth = '900px';
+            element.style.height = '1270px'; // 900px * 1.411 (A4 ratio) guarantees exactly 1 page
+            element.style.maxHeight = '1270px';
+            element.style.overflow = 'hidden';
             btn.style.display = 'none'; // Hide button from canvas
 
             const opt = {
                 margin:       0,
                 filename:     'Andrii_Makovenko_CV.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, scrollX: 0, scrollY: 0 },
+                html2canvas:  { scale: 2, windowWidth: 900, width: 900, scrollX: 0, scrollY: 0 },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
             
@@ -174,6 +175,9 @@
                     element.style.margin = '';
                     element.style.width = '';
                     element.style.maxWidth = '';
+                    element.style.height = '';
+                    element.style.maxHeight = '';
+                    element.style.overflow = '';
                     btn.style.display = '';
                 }).catch(err => {
                     console.warn("html2pdf failed, falling back to native print.");
@@ -181,6 +185,9 @@
                     element.style.margin = '';
                     element.style.width = '';
                     element.style.maxWidth = '';
+                    element.style.height = '';
+                    element.style.maxHeight = '';
+                    element.style.overflow = '';
                     btn.style.display = '';
                     window.print();
                 });
