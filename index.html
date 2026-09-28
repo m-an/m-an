@@ -157,6 +157,9 @@
             element.style.margin = '0';
             element.style.width = '210mm'; // Lock exact A4 width during capture
             element.style.maxWidth = '210mm';
+            element.style.height = '295mm'; // Slightly under 297mm to prevent a blank 2nd page
+            element.style.maxHeight = '295mm';
+            element.style.overflow = 'hidden';
             btn.style.display = 'none'; // Hide button from canvas
 
             const opt = {
@@ -174,6 +177,9 @@
                     element.style.margin = '';
                     element.style.width = '';
                     element.style.maxWidth = '';
+                    element.style.height = '';
+                    element.style.maxHeight = '';
+                    element.style.overflow = '';
                     btn.style.display = '';
                 }).catch(err => {
                     console.warn("html2pdf failed, falling back to native print.");
@@ -181,6 +187,9 @@
                     element.style.margin = '';
                     element.style.width = '';
                     element.style.maxWidth = '';
+                    element.style.height = '';
+                    element.style.maxHeight = '';
+                    element.style.overflow = '';
                     btn.style.display = '';
                     window.print();
                 });
