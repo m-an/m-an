@@ -9,9 +9,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="resume-container">
+    <button class="download-btn" onclick="generatePDF()">
+        <i class="fas fa-file-pdf"></i> Export as PDF
+    </button>
+    <div class="resume-container" id="cv-content">
         <!-- Left Column -->
         <aside class="sidebar">
             <div class="profile-img-container">
@@ -132,5 +136,37 @@
             </section>
         </main>
     </div>
+
+    <script>
+        function generatePDF() {
+            // Because html2pdf can fail on local file:// due to strict CORS rules on images,
+            // we will try it first, and seamlessly fall back to the browser's native print-to-PDF
+            // which always works flawlessly and generates crisp vector text.
+            
+            if (typeof html2pdf === 'undefined') {
+                window.print();
+                return;
+            }
+
+            const element = document.getElementById('cv-content');
+            const opt = {
+                margin:       0,
+                filename:     'Andrii_Makovenko_CV.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 }, // Removed useCORS to prevent local file:// errors
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            try {
+                html2pdf().set(opt).from(element).save().catch(err => {
+                    console.warn("html2pdf failed (likely CORS error), falling back to native print.");
+                    window.print();
+                });
+            } catch (e) {
+                console.warn("html2pdf failed, falling back to native print.");
+                window.print();
+            }
+        }
+    </script>
 </body>
 </html>
