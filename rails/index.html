@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrii Makovenko - Resume</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="download-btn" onclick="generatePDF()">
+        <i class="fas fa-file-pdf"></i> Export as PDF
+    </button>
+    <div class="resume-container" id="cv-content">
+        <!-- Left Column -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <!-- Replace 'profile.jpg' with your actual profile image filename -->
+                <img src="profile.jpg" alt="Andrii Makovenko" class="profile-img">
+            </div>
+
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">CONTACT</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-phone"></i> +380502132501</li>
+                    <li><i class="fas fa-at"></i> makovenkoandrii@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kyiv, Ukraine</li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">EDUCATION</h2>
+                <div class="education-item">
+                    <h3>KYIV POLYTECHNIC</h3>
+                    <p>Unfinished Bachelor of Micro- and Nanoelectronics</p>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">SKILLS</h2>
+                <ul class="skills-list">
+                    <li>Ruby</li>
+                    <li>Rails</li>
+                    <li>Background processing (Sidekiq/delayed_job/resque, etc.)</li>
+                    <li>Minitest, RSPec</li>
+                    <li>Hotwire, Stimulust, Javascript, React</li>
+                    <li>PostgreSQL, MySQL, Redis, ElasticSearch</li>
+                    <li>Linux, Docker</li>
+                    <li>Claude, Copilot, Cursor</li>
+                    <li>CI/CD</li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h2 class="sidebar-title">LANGUAGES</h2>
+                <ul class="skills-list">
+                    <li>Ukrainian</li>
+                    <li>English</li>
+                    <li>Romanian</li>
+                </ul>
+            </section>
+
+        </aside>
+
+        <!-- Right Column -->
+        <main class="main-content">
+            <header class="header">
+                <h1 class="name">ANDRII<br>MAKOVENKO</h1>
+                <h2 class="job-title">ENGINEERING MANAGER / TECH LEAD</h2>
+            </header>
+
+            <section class="main-section">
+                <h2 class="section-title">ABOUT ME</h2>
+                <p class="summary">
+                    Senior Software Engineer with 10+ years building and scaling consumer-facing applications for
+                    high-traffic, fast-moving products using Ruby on Rails. Also bring mobile and web platform breadth
+                    across the stack. Track record of leading cross-functional work with Product and AI/ML teams, and
+                    building the processes that let teams ship fast without breaking things. Thrive with high autonomy
+                    and startup pace — increasingly leaning on AI-assisted development to move even faster.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <h2 class="section-title">EXPERIENCE</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <h3 class="job-role">Tech Lead</h3>
+                                <span class="job-date">2024 - Now</span>
+                            </div>
+                            <div class="job-company">OnlineMinds | Remote</div>
+                            <p class="job-description">
+                                Lead a team of up to 15 engineers delivering a high-traffic rental search platform
+                                serving multiple international markets. Drive technical strategy, architectural
+                                decisions, and cross-functional collaboration while maintaining hands-on development
+                                contributions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <h3 class="job-role">Ruby Backend Engineer / Team Lead</h3>
+                                <span class="job-date">2019 - 2024</span>
+                            </div>
+                            <div class="job-company">Syndicode | Kyiv, Ukraine</div>
+                            <p class="job-description">
+                                Advanced from mid-level engineer to team lead, managing 4-6 engineers on a complex
+                                long-term project. Guided team members in their professional growth from junior to
+                                mid-senior levels while delivering strategic technical initiatives.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <h3 class="job-role">Ruby on Rails and DevOps Engineer</h3>
+                                <span class="job-date">2016 - 2019</span>
+                            </div>
+                            <div class="job-company">Helios Technologies / Openware | Kyiv, Ukraine</div>
+                            <p class="job-description">
+                                Progressed from trainee to mid-level engineer, contributing to diverse client projects
+                                and the company's proprietary crypto exchange platform.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function generatePDF() {
+            window.print();
+        }
+    </script>
+</body>
+
+</html>
