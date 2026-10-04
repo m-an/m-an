@@ -3,143 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrii Makovenko - Resume</title>
-    <!-- FontAwesome for icons -->
+    <title>Andrii Makovenko — Engineering Manager & Tech Lead</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="download-btn" onclick="generatePDF()">
-        <i class="fas fa-file-pdf"></i> Export as PDF
-    </button>
-    <div class="resume-container" id="cv-content">
-        <!-- Left Column -->
-        <aside class="sidebar">
-            <div class="profile-img-container">
-                <!-- Replace 'profile.jpg' with your actual profile image filename -->
-                <img src="profile.jpg" alt="Andrii Makovenko" class="profile-img">
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">AM</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="cv/" class="nav-cta">Download CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting reveal">Hello, I'm</p>
+                <h1 class="hero-name reveal">Andrii<br>Makovenko</h1>
+                <p class="hero-title reveal">Engineering Manager & Tech Lead</p>
+                <p class="hero-subtitle reveal">Building and scaling high-performance engineering teams<br>in fast-paced product environments</p>
+                <div class="hero-actions reveal">
+                    <a href="#experience" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
             </div>
-            
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">CONTACT</h2>
-                <ul class="contact-list">
-                    <li><i class="fas fa-phone"></i> +380502132501</li>
-                    <li><i class="fas fa-at"></i> makovenkoandrii@gmail.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Kyiv, Ukraine</li>
-                </ul>
-            </section>
+            <div class="hero-image reveal">
+                <div class="hero-image-ring"></div>
+                <img src="profile.jpg" alt="Andrii Makovenko">
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">EDUCATION</h2>
-                <div class="education-item">
-                    <h3>KYIV POLYTECHNIC</h3>
-                    <p>Unfinished Bachelor of Micro- and Nanoelectronics</p>
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-heading reveal">
+                <span class="section-number">01</span>
+                About Me
+            </h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>Results-driven Engineering Manager with <strong>8+ years</strong> of experience building and scaling high-performance engineering teams in fast-paced product environments.</p>
+                    <p>Proven track record of leading cross-functional initiatives, driving mobile and web platform development, and implementing processes that accelerate delivery while maintaining quality.</p>
                 </div>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">SKILLS</h2>
-                <ul class="skills-list">
-                    <li>Leadership</li>
-                    <li>Creativity</li>
-                    <li>Problem Solving</li>
-                    <li>Mentoring</li>
-                    <li>People Management</li>
-                    <li>Communication</li>
-                    <li>Project Management</li>
-                    <li>Ownership</li>
-                    <li>Strategic Thinking</li>
-                </ul>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">LANGUAGES</h2>
-                <ul class="skills-list">
-                    <li>Ukrainian</li>
-                    <li>English</li>
-                    <li>Romanian</li>
-                </ul>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-title">INTERESTS</h2>
-                <ul class="skills-list">
-                    <li>Animals</li>
-                    <li>Fishing</li>
-                    <li>Football (Soccer)</li>
-                </ul>
-            </section>
-        </aside>
-
-        <!-- Right Column -->
-        <main class="main-content">
-            <header class="header">
-                <h1 class="name">ANDRII<br>MAKOVENKO</h1>
-                <h2 class="job-title">ENGINEERING MANAGER / TECH LEAD</h2>
-            </header>
-
-            <section class="main-section">
-                <h2 class="section-title">ABOUT ME</h2>
-                <p class="summary">
-                    Results-driven Engineering Manager with 8+ years of experience building and scaling high-performance engineering teams in fast-paced product environments. Proven track record of leading cross-functional initiatives, driving mobile and web platform development, and implementing processes that accelerate delivery while maintaining quality.
-                </p>
-            </section>
-
-            <section class="main-section">
-                <h2 class="section-title">EXPERIENCE</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="job-header">
-                                <h3 class="job-role">Tech Lead</h3>
-                                <span class="job-date">2024 - Now</span>
-                            </div>
-                            <div class="job-company">OnlineMinds | Remote</div>
-                            <p class="job-description">
-                                Lead a team of up to 15 engineers delivering a high-traffic rental search platform serving multiple international markets. Drive technical strategy, architectural decisions, and cross-functional collaboration while maintaining hands-on development contributions.
-                            </p>
-                        </div>
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="8">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="job-header">
-                                <h3 class="job-role">Ruby Backend Engineer / Team Lead</h3>
-                                <span class="job-date">2019 - 2024</span>
-                            </div>
-                            <div class="job-company">Syndicode | Kyiv, Ukraine</div>
-                            <p class="job-description">
-                                Advanced from mid-level engineer to team lead, managing 4-6 engineers on a complex long-term project. Guided team members in their professional growth from junior to mid-senior levels while delivering strategic technical initiatives.
-                            </p>
-                        </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Engineers Led</span>
                     </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="job-header">
-                                <h3 class="job-role">Ruby on Rails and DevOps Engineer</h3>
-                                <span class="job-date">2016 - 2019</span>
-                            </div>
-                            <div class="job-company">Helios Technologies / Openware | Kyiv, Ukraine</div>
-                            <p class="job-description">
-                                Progressed from trainee to mid-level engineer, contributing to diverse client projects and the company's proprietary crypto exchange platform.
-                            </p>
-                        </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-suffix"></span>
+                        <span class="stat-label">Companies</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-suffix"></span>
+                        <span class="stat-label">Languages</span>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <h2 class="section-heading reveal">
+                <span class="section-number">02</span>
+                Experience
+            </h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-badge">Current</div>
+                        <h3 class="timeline-role">Tech Lead</h3>
+                        <div class="timeline-meta">
+                            <span class="timeline-company"><i class="fas fa-building"></i> OnlineMinds</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Remote</span>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2024 — Present</span>
+                        </div>
+                        <p class="timeline-desc">Lead a team of up to 15 engineers delivering a high-traffic rental search platform serving multiple international markets. Drive technical strategy, architectural decisions, and cross-functional collaboration while maintaining hands-on development contributions.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <h3 class="timeline-role">Ruby Backend Engineer / Team Lead</h3>
+                        <div class="timeline-meta">
+                            <span class="timeline-company"><i class="fas fa-building"></i> Syndicode</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Kyiv, Ukraine</span>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2019 — 2024</span>
+                        </div>
+                        <p class="timeline-desc">Advanced from mid-level engineer to team lead, managing 4-6 engineers on a complex long-term project. Guided team members in their professional growth from junior to mid-senior levels while delivering strategic technical initiatives.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-card">
+                        <h3 class="timeline-role">Ruby on Rails and DevOps Engineer</h3>
+                        <div class="timeline-meta">
+                            <span class="timeline-company"><i class="fas fa-building"></i> Helios Technologies / Openware</span>
+                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Kyiv, Ukraine</span>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2016 — 2019</span>
+                        </div>
+                        <p class="timeline-desc">Progressed from trainee to mid-level engineer, contributing to diverse client projects and the company's proprietary crypto exchange platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-heading reveal">
+                <span class="section-number">03</span>
+                Skills & Expertise
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Leadership</h3>
+                    <p>Building and growing high-performing engineering teams from the ground up</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Creativity</h3>
+                    <p>Finding innovative solutions to complex technical and organizational challenges</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h3>Problem Solving</h3>
+                    <p>Systematic approach to debugging, architecture, and process improvement</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Mentoring</h3>
+                    <p>Guiding engineers through career growth from junior to senior levels</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h3>People Management</h3>
+                    <p>Managing cross-functional teams with empathy, clarity and accountability</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Project Management</h3>
+                    <p>Driving delivery of complex initiatives on time and within scope</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-chess"></i></div>
+                    <h3>Strategic Thinking</h3>
+                    <p>Aligning technical decisions with business goals and long-term vision</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Ownership</h3>
+                    <p>Taking end-to-end responsibility for outcomes, not just outputs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Languages -->
+    <section class="section section-alt" id="education">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-block reveal">
+                    <h2 class="info-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="info-card">
+                        <h3>Kyiv Polytechnic</h3>
+                        <p>Bachelor of Micro- and Nanoelectronics</p>
+                    </div>
+                </div>
+                <div class="info-block reveal">
+                    <h2 class="info-title"><i class="fas fa-language"></i> Languages</h2>
+                    <div class="info-tags">
+                        <span class="tag">🇺🇦 Ukrainian</span>
+                        <span class="tag">🇬🇧 English</span>
+                        <span class="tag">🇷🇴 Romanian</span>
+                    </div>
+                </div>
+                <div class="info-block reveal">
+                    <h2 class="info-title"><i class="fas fa-heart"></i> Interests</h2>
+                    <div class="info-tags">
+                        <span class="tag">🐾 Animals</span>
+                        <span class="tag">🎣 Fishing</span>
+                        <span class="tag">⚽ Football</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-contact" id="contact">
+        <div class="container">
+            <h2 class="section-heading reveal">
+                <span class="section-number">04</span>
+                Get In Touch
+            </h2>
+            <p class="contact-text reveal">I'm always open to discussing new opportunities, interesting projects, or ways to collaborate.</p>
+            <div class="contact-cards reveal">
+                <a href="mailto:makovenkoandrii@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>makovenkoandrii@gmail.com</span>
+                </a>
+                <a href="tel:+380502132501" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <span>+380 50 213 2501</span>
+                </a>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Kyiv, Ukraine</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Andrii Makovenko. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        function generatePDF() {
-            window.print();
-        }
+        // Navbar scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+
+        // Mobile nav toggle
+        const toggle = document.getElementById('nav-toggle');
+        const links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            links.classList.toggle('open');
+            toggle.classList.toggle('open');
+        });
+        links.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                links.classList.remove('open');
+                toggle.classList.remove('open');
+            });
+        });
+
+        // Scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    let current = 0;
+                    const increment = target / 40;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            el.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.floor(current);
+                        }
+                    }, 40);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
